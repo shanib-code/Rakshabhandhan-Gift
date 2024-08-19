@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Happy Rakshabandhan</title>
+</head>
+
+<body>
+    <header>
+        <img src="https://i.ibb.co/b5dbD0y/thread.png" alt="thread" class="thread1 thread">
+        <img src="https://i.ibb.co/9qnC3Nw/Header-rakhi.png" alt="" class="headerRakhi">
+        <h1 class="rakshaHeading">Rakshabandhan</h1>
+        <img src="https://i.ibb.co/b5dbD0y/thread.png" alt="thread" class="thread2 thread">
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="homeSecRakhi">
+                <img src="https://i.ibb.co/Yt0wYT5/rakhi-main.png" alt="Rakhi Image" class="homeSecRakhiMainPart">
+                <img src="https://i.ibb.co/z2GxWQL/thread-of-rakhi.png" alt="Rakhi Image" class="homeSecRakhiThread">
+            </div>
+            <h1 class="happyRakshaDay">Happy <span class="rakshabandhan">Rakshabandhan </span></h1>
+            <div class="wish">
+                <h2>My Wishes</h2>
+                <p>Happy Rakshabandhan! Even though we've never met in person, your kindness and support mean a lot to
+                    me. Wishing you happiness and success always my sisters. Don't forget my sweets on this
+                    Rakshabandhan!</p>
+            </div>
+            <span class="myName">From SHANIB KHAN</span>
+
+            <form>
+                <h2 id="homeInfo">Next part for GIRLS (sisters) only</h2>
+                <div>
+                    <input type="checkbox" name="agree" id="agreeAsSister" required>
+                    <label for="agreeAsSister">I agree that I am a <span id="sister">Sister</span></label>
+                </div>
+                <button onclick="sisSpecialSec(event)" id="viewButton">View</button>
+            </form>
+        </section>
+
+        <section id="sisSpecial">
+            <h2>Click on hand to tie Rakhi</h2>
+            <img src="https://i.ibb.co/TmxkDGt/rakhi-in-hands.png" alt="Rakhi Image" id="rakhiInHand">
+            <img src="https://i.ibb.co/yPkR1QX/hand.png" alt="Hand Image" onclick="tieRakhi()" id="handImg">
+            <div class="giftPlusInfo">
+                <p>I can't let you go without your gift. Here is that gift... and yess don't forget my sweets</p>
+                <a href="https://www.apple.com/in/shop/bag"><button id="yourGift">Your
+                        Gift</button></a>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script src="script.js"></script>
+<script>
+    function sisSpecialSec(event) {
+        event.preventDefault();
+        let isSure = confirm("Are you sure that you are a girl?? \nBoys are strictly prohibited");
+        if (isSure) {
+            document.getElementById("home").style.display = "none";
+            document.getElementById("sisSpecial").style.display = "flex";
+            document.getElementById("sisSpecial").style.flexDirection = "column";
+            document.getElementById("sisSpecial").style.justifyContent = "center";
+            document.getElementById("sisSpecial").style.alignItems = "center";
+        }
+    }
+
+    function tieRakhi() {
+        document.getElementById("rakhiInHand").classList.toggle('active');
+        document.getElementById("yourGift").disabled = false;
+    }
+</script>
+
+</html>
